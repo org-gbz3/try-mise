@@ -1,0 +1,4 @@
+# Runtime/SDK versions shared by frontend/ and backend/.
+[tools]
+node = "24.21.0"
+dotnet = "10.0.401"
