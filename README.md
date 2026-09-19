@@ -82,3 +82,11 @@ docker compose -f .devcontainer/compose.yaml exec sqlserver bash -c 'SQLCMDPASSW
 - [mise の shims](https://mise.jdx.dev/dev-tools/shims.html)
 - [SQL Server コンテナの公式手順・要件](https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-ver17)
 - [Dev Containers と Docker Compose](https://code.visualstudio.com/docs/devcontainers/create-dev-container)
+
+
+## よく使うコマンド
+
+```bash
+# ワンライナー
+npm --prefix frontend run build && dotnet run --project backend --no-launch-profile --urls http://0.0.0.0:5000
+```

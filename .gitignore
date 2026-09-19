@@ -43,6 +43,7 @@ ScaffoldingReadMe.txt
 node_modules/
 .svelte-kit/
 /frontend/build/
+/backend/wwwroot/
 
 # Others
 ~$*
