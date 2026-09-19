@@ -87,6 +87,6 @@ docker compose -f .devcontainer/compose.yaml exec sqlserver bash -c 'SQLCMDPASSW
 ## よく使うコマンド
 
 ```bash
-# ワンライナー
+# ワンライナー  see: http://localhost:5000/weatherforecast
 npm --prefix frontend run build && dotnet run --project backend --no-launch-profile --urls http://0.0.0.0:5000
 ```
