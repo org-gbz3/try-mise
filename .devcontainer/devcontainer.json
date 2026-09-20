@@ -14,7 +14,7 @@
     "vscode": {
       "extensions": [
         "svelte.svelte-vscode",
-        "ms-dotnettools.csharp",
+        "ms-dotnettools.csdevkit",
         "esbenp.prettier-vscode",
         "anthropic.claude-code",
         "openai.chatgpt"
@@ -22,5 +22,8 @@
     }
   },
   "shutdownAction": "stopCompose",
-  "postCreateCommand": "mise trust /workspaces/try-mise/mise.toml"
+  "postCreateCommand": "mise trust /workspaces/try-mise/mise.toml",
+  "remoteEnv": {
+    "LANG": "ja_JP.UTF-8"
+  }
 }
