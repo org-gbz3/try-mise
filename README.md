@@ -32,7 +32,7 @@ mise で Node.js 24 系（npm 同梱）と .NET SDK 10.0 系を導入します�
 
 ## アプリケーションの初期作成
 
-現時点では配置先ディレクトリのみを用意しています。Dev Container 内のリポジトリルートで、初回のみ実行してください。
+アプリケーションは作成済みです。以下は初期作成時に使用したコマンドです。
 
 ```sh
 npx sv create frontend
@@ -87,6 +87,14 @@ docker compose -f .devcontainer/compose.yaml exec sqlserver bash -c 'SQLCMDPASSW
 ## よく使うコマンド
 
 ```bash
-# ワンライナー  see: http://localhost:5000/weatherforecast
+# ワンライナー  see: http://localhost:5000/
 npm --prefix frontend run build && dotnet run --project backend --no-launch-profile --urls http://0.0.0.0:5000
 ```
+
+## SPA の配信
+
+`mise run dev` でフロントエンドをビルドし、ASP.NET Core を起動します。`http://localhost:5000/` で `backend/wwwroot` の SPA を配信します。静的ファイルに加え、拡張子のないクライアント側ルートへのアクセスは `index.html` にフォールバックします。
+
+API は `/api/` 配下に配置します。天気予報 API は `/api/weatherforecast` で、未定義の API パスは 404 を返します。
+
+配備時は `npm --prefix frontend run build` の後に `dotnet publish backend -c Release` を実行します。フロントエンドの生成物は直接編集せず、ソースから再生成してください。
