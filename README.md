@@ -30,6 +30,16 @@ mise で Node.js 24 系（npm 同梱）と .NET SDK 10.0 系を導入します�
 ツール固有の OS ライブラリやコンパイラが必要な場合は Dockerfile に追加してください。
 .NET の実行に必要な Debian ライブラリは Dockerfile に追加済みです。
 
+## Modern Web Guidance スキル
+
+`.claude/skills/modern-web-guidance` に、HTML/CSS やクライアントサイド JS（モーダル、フォーム、アクセシビリティ、Core Web Vitals など）のモダンな実装方法を調べるための Claude Code 用スキルを導入しています。
+フロントエンドの UI 実装・修正時に最初に呼び出し、取得したガイドに沿って実装します。内部で `npx -y modern-web-guidance@latest` を実行するため、利用時はネットワークアクセスが必要です。
+
+```
+# 導入コマンド (Chat で新規セッション開始後から利用可能)
+npx -y skills add googlechrome/modern-web-guidance --skill modern-web-guidance --agent claude-code
+```
+
 ## アプリケーションの初期作成
 
 アプリケーションは作成済みです。以下は初期作成時に使用したコマンドです。
